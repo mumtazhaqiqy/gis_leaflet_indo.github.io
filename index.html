@@ -34,11 +34,11 @@
 
 <div id='map'></div>
 
-<script type="text/javascript" src="us-states.js"></script>
+<script type="text/javascript" src="id-prov.js"></script>
 
 <script type="text/javascript">
 
-	const map = L.map('map').setView([37.8, -96], 4);
+	const map = L.map('map').setView([113, -0.78], 4);
 
 	const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		maxZoom: 19,
@@ -55,8 +55,8 @@
 	};
 
 	info.update = function (props) {
-		const contents = props ? `<b>${props.name}</b><br />${props.density} people / mi<sup>2</sup>` : 'Hover over a state';
-		this._div.innerHTML = `<h4>US Population Density</h4>${contents}`;
+		const contents = props ? `<b>${props.name}</b>` : 'Hover over a province';
+		this._div.innerHTML = `<h4>Indonesian Province</h4>${contents}`;
 	};
 
 	info.addTo(map);
@@ -80,7 +80,7 @@
 			color: 'white',
 			dashArray: '3',
 			fillOpacity: 0.7,
-			fillColor: getColor(feature.properties.density)
+			// fillColor: getColor(feature.properties.density)
 		};
 	}
 
